@@ -1,2 +1,2 @@
-# semantic-engine
-This repository provides an engine for executing unambiguous, formally specified designs. Executability serves as the criterion for semantic completeness.
+# semantic-world-engine
+This repository provides an engine for executing semantic world models produced by the semating-world-compiler (SWC). Since the design is a closed semantic world that is specified unambiguously, the SWC an employ many interesting techniques to ensure the completeness of the model and flag inconsistencies. The output of the SWC is a Semantic World Model (SWM), which the Semantic World Engine (SWE) can execute. 
