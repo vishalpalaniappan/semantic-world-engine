@@ -4,6 +4,7 @@
         {
             "name": "Book",
             "attributes": ["Name"],
+            "required": ["Name"],
             "can_belong_to": ["User", "Librarian", "Basket"]
         },
         {
