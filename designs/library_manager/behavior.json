@@ -2,7 +2,11 @@
     "description": "Contains the behavor of the closed semantic world.",
     "data": [
         {
-            "name": "AddBookToBasket"
+            "name": "AddBookToBasket",
+            "primitive": "Add",
+            "from": "Librarian",
+            "to": "Basket",
+            "hasUid": true
         }
     ]
 }

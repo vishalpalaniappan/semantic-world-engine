@@ -3,6 +3,8 @@
     "data": [
         {
             "name": "Add",
+            "fromKey": "has",
+            "toKey": "has",
             "description": "Transfers ownership of object form one participant to another."
         }
     ]
