@@ -5,6 +5,7 @@
         "semantic_primitives": "primitives.json",
         "behavior": "behavior.json",
         "state_machine": "state_machine.json",
+        "participants": "participants.json",
         "initial_world_state": "initial_world_state.json"
     }
 }
