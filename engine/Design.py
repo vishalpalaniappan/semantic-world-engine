@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+from engine.Participant import Participant
 
 '''
 This class represents the design. It accepts a root design JSON
@@ -27,6 +28,8 @@ class Design():
         for file in self.designMeta["files"]:
             self.loadDesignMeta(file)
         
+        self.processMetadata()
+        
     def loadDesignMeta(self, key):
         '''
         Loads the metadata for the specified key.
@@ -42,4 +45,28 @@ class Design():
             print("Loaded design meta:", getattr(self, key))
         else:
             raise Exception("Design is missing initial world state specification")
-            
+        
+    def processMetadata(self):
+        '''
+        Processes the metadata and creates the relevant objects
+        by calling the relevant functions.
+        
+        :param self: Reference to instantiated object.
+        :param key: Key of metadata being processed.
+        '''
+        self.processParticipants()
+
+    def processParticipants(self):
+        '''
+        Create participants from the metadata.
+        
+        :param self: Reference to instantiated object.
+        '''
+        if "data" not in getattr(self, "participants_meta"):
+            raise Exception("Participants metadata doesn't contain data key")
+        
+        self.participants = []
+        for participant in self.participants_meta["data"]:
+            obj = Participant(participant)
+            self.participants.append(obj)
+

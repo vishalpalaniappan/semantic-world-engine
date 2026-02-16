@@ -1,3 +1,8 @@
 {
-    "description": "Contains the participants of the closed semantic world."
+    "description": "Contains the participants of the closed semantic world.",
+    "data": [
+        {
+            "name": "Book"
+        }
+    ]
 }

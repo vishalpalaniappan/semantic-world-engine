@@ -8,5 +8,6 @@ are modified.
 '''
 class Participant:
 
-    def __init__(self):
+    def __init__(self, participant):
+        print ("Created participant:", participant["name"])
         pass

@@ -2,10 +2,10 @@
     "name": "Design of a library manager.",
     "description": "This design contains a library manager which accepts books from the user, adds them to a basket and when the user chooses, sorts them into the shelf according to the first letter of the books name.",
     "files": {
-        "semantic_primitives": "primitives.json",
-        "behavior": "behavior.json",
-        "state_machine": "state_machine.json",
-        "participants": "participants.json",
-        "initial_world_state": "initial_world_state.json"
+        "semantic_primitives_meta": "primitives.json",
+        "behavior_meta": "behavior.json",
+        "state_machine_meta": "state_machine.json",
+        "participants_meta": "participants.json",
+        "initial_world_state_meta": "initial_world_state.json"
     }
 }
