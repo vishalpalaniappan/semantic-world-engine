@@ -8,4 +8,15 @@ class Design():
 
     def loadDesign(self):
         with open(self.designPath) as f:
-            print(json.dumps(f.read()))
+            self.designMeta = json.loads(f.read())
+
+        for file in self.designMeta["files"]:
+            self.loadDesignMeta(file)
+        
+    def loadDesignMeta(self, key):
+        if key in self.designMeta["files"]:
+            self.state_machine = self.designMeta["files"]["initial_world_state"]
+            print("Loaded design meta:", key)
+        else:
+            raise Exception("Design is missing initial world state specification")
+            

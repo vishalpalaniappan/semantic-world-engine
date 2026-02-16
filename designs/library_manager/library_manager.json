@@ -4,6 +4,7 @@
     "files": {
         "semantic_primitives": "primitives.json",
         "behavior": "behavior.json",
-        "state_machine": "state_machine.json"
+        "state_machine": "state_machine.json",
+        "initial_world_state": "initial_world_state.json"
     }
 }
