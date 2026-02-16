@@ -1,5 +1,8 @@
-# Semantic World Engine (SME)
+# Semantic World Engine (SWE)
 This repository provides a Semantic World Engine (SWE) capable of executing fully specified, closed semantic worlds, referred to as designs.
+
+> [!IMPORTANT]  
+> I was initially going to delete this repo but then I decided to leave it because this exercise reinforced some ideas in my brain. In trying to build the semantic world engine, I specified the semantics and then I built the state machine. Then I tried to actually realize  the state transformations and I found myself back at the implementation. Then I realized, a semantic world engine is what a program is and I had just gone in a full circle. Except here I made it more explicit the implementation realizes the meaning of the semantic world and I personally found it interesting. There are some interesting tangential ideas I got from this that I would be interested in exploring but anyway, I am just going to leave this as it is.
 
 ## Overview
 
