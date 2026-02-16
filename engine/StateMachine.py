@@ -36,11 +36,11 @@ class StateMachine():
         :param self: Reference to self.
         '''
         currStep = self.stateMachine["data"][self.currPosition - 1]
-        if ("prompt" in currStep):
+        behavior = self.getBehavior(currStep["behavior"])
+        if (behavior["acceptsInput"]):
             print("")
             acceptedInput = input(currStep["prompt"])
 
-        behavior = self.getBehavior(currStep["behavior"])
         print(currStep)
         print(behavior.getName(), behavior.primitive.getName())
 

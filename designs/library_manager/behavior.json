@@ -3,18 +3,18 @@
     "data": [
         {
             "name": "AddBookToBasket",
-            "primitive": "Add",
-            "from": "Librarian",
-            "to": "Basket",
-            "hasUid": true
+            "steps": [
+                "Transfer Book Librarian Basket"
+            ]
         },
         {
             "name": "AcceptBookFromUser",
-            "primitive": "Create",
-            "type": "Book",
-            "attribute": "Name",
-            "to": "Librarian",
-            "hasUid": true
+            "acceptsInput": true,
+            "steps": [
+                "Create Book",
+                "Assign Input Book Name",
+                "Add Book Librarian"
+            ]
         }
     ]
 }
