@@ -1,6 +1,8 @@
 import json
 from pathlib import Path
 from engine.Participant import Participant
+from engine.Behavior import Behavior
+from engine.Primitive import Primitive
 
 '''
 This class represents the design. It accepts a root design JSON
@@ -42,7 +44,7 @@ class Design():
             new_path = original_path.parent / self.designMeta["files"][key]
             with open(new_path) as f:
                 setattr(self, key, json.loads(f.read()))
-            print("Loaded design meta:", getattr(self, key))
+            # print("Loaded design meta:", getattr(self, key))
         else:
             raise Exception("Design is missing initial world state specification")
         
@@ -55,6 +57,8 @@ class Design():
         :param key: Key of metadata being processed.
         '''
         self.processParticipants()
+        self.processBehaviors()
+        self.processPrimitives()
 
     def processParticipants(self):
         '''
@@ -69,4 +73,32 @@ class Design():
         for participant in self.participants_meta["data"]:
             obj = Participant(participant)
             self.participants.append(obj)
+
+    def processBehaviors(self):
+        '''
+        Create behaviors from the metadata.
+        
+        :param self: Reference to instantiated object.
+        '''
+        if "data" not in getattr(self, "behaviors_meta"):
+            raise Exception("Behaviors metadata doesn't contain data key")
+        
+        self.behaviors = []
+        for behavior in self.behaviors_meta["data"]:
+            obj = Behavior(behavior)
+            self.behaviors.append(obj)
+
+    def processPrimitives(self):
+        '''
+        Create primitives from the metadata.
+        
+        :param self: Reference to instantiated object.
+        '''
+        if "data" not in getattr(self, "primitives_meta"):
+            raise Exception("Primitives metadata doesn't contain data key")
+        
+        self.primitives = []
+        for primitive in self.primitives_meta["data"]:
+            obj = Primitive(primitive)
+            self.primitives.append(obj)
 

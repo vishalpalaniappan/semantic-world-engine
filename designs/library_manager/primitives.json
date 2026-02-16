@@ -1,3 +1,9 @@
 {
-    "description": "Contains the semantic primitives of the closed semantic world."
+    "description": "Contains the semantic primitives of the closed semantic world.",
+    "data": [
+        {
+            "name": "Add",
+            "description": "Transfers ownership of object form one participant to another."
+        }
+    ]
 }

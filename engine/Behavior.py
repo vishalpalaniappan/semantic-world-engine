@@ -8,5 +8,6 @@ the world state.
 '''
 class Behavior():
 
-    def __init__(self):
+    def __init__(self, behavior_meta):
+        print("Created behavior:", behavior_meta["name"])
         pass

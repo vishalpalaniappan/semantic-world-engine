@@ -18,5 +18,6 @@ from explicitly defined transformations.
 '''
 class Primitive():
 
-    def __init__(self):
+    def __init__(self, primitive_meta):
+        print("Created primitive:", primitive_meta["name"])
         pass
