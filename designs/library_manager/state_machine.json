@@ -1,3 +1,14 @@
 {
-    "description": "Contains the state machine of the design."
+    "description": "Contains the state machine of the design.",
+    "data": [
+        {
+            "id": "1",
+            "behavior": "AcceptBookFromUser"
+        },
+        {
+            "id": "2",
+            "behavior": "AddBookToBasket",
+            "goto": "1"
+        }
+    ]
 }
