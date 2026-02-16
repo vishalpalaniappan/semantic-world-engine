@@ -57,8 +57,8 @@ class Design():
         :param key: Key of metadata being processed.
         '''
         self.processParticipants()
-        self.processBehaviors()
         self.processPrimitives()
+        self.processBehaviors()
         self.processWorldState()
 
     def processParticipants(self):
@@ -85,7 +85,7 @@ class Design():
         
         self.behaviors = []
         for behavior in self.behaviors_meta["data"]:
-            obj = Behavior(behavior)
+            obj = Behavior(behavior, self.primitives)
             self.behaviors.append(obj)
 
     def processPrimitives(self):
