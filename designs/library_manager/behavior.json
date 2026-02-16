@@ -11,8 +11,7 @@
         {
             "name": "AcceptBookFromUser",
             "primitive": "Create",
-            "prompt": "Please enter books name:",
-            "from": "environment",
+            "from": "User",
             "to": "Librarian",
             "hasUid": true
         }
