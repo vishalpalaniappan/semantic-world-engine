@@ -22,5 +22,6 @@ conforms precisely to the defined semantic world.
 '''
 class StateMachine():
 
-    def __init__(self):
-        pass
+    def __init__(self, stateMachine):
+        self.stateMachine = stateMachine
+        print(stateMachine)

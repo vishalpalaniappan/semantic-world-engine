@@ -3,6 +3,7 @@ from pathlib import Path
 from engine.Participant import Participant
 from engine.Behavior import Behavior
 from engine.Primitive import Primitive
+from engine.StateMachine import StateMachine
 
 '''
 This class represents the design. It accepts a root design JSON
@@ -60,6 +61,7 @@ class Design():
         self.processPrimitives()
         self.processBehaviors()
         self.processWorldState()
+        self.processStateMachine()
 
     def processParticipants(self):
         '''
@@ -124,3 +126,13 @@ class Design():
         # Display the world state
         for paritcipant in self.world:
             print(paritcipant.name)
+
+    def processStateMachine(self):
+        '''
+        Initializes the state machine.
+        
+        :param self: Reference to instantiated object.
+        '''
+        self.stateMachine = StateMachine(
+            getattr(self, "state_machine_meta")
+        )
