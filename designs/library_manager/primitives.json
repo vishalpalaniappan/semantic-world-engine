@@ -6,6 +6,11 @@
             "fromKey": "has",
             "toKey": "has",
             "description": "Transfers ownership of object form one participant to another."
+        },
+        {
+            "name": "Create",
+            "toKey": "has",
+            "description": "Creates an object adds it to a participant."
         }
     ]
 }
