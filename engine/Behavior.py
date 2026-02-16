@@ -27,4 +27,15 @@ class Behavior():
 
         for primitive in self.primitives:
             if (name == primitive.getName()):
-                return primitive
+                return primitive        
+
+    def transform(self, world, args):
+        '''
+        Perform the transformation on the world given the args.
+        
+        :param self: Reference to self.
+        :param world: World Participants. 
+        :param args: Transformation arguments.
+        '''
+        print("Initial world state", world)
+        print("Transformation args:", args)

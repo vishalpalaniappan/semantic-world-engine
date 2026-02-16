@@ -18,13 +18,24 @@ from explicitly defined transformations.
 '''
 class Primitive():
 
-    def __init__(self, primitive_meta):
-        self.meta = primitive_meta
-        print("Created primitive:", primitive_meta["name"])
-        pass
+    def __init__(self, primitiveMeta, primitiveType):
+        self.meta = primitiveMeta
+        self.primitiveType = primitiveType
+        print("Created primitive:", primitiveMeta["name"])
 
     def getName(self):
         if "name" in self.meta:
             return self.meta["name"]
         else:
-            return None
+            return None        
+
+    def transform(self, world, args):
+        '''
+        Perform the transformation on the world given the args.
+        
+        :param self: Reference to self.
+        :param world: World Participants. 
+        :param args: Transformation arguments.
+        '''
+        print("Initial world state", world)
+        print("Transformation args:", args)

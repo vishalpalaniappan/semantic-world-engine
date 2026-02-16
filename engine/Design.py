@@ -88,7 +88,7 @@ class Design():
         
         self.behaviors = []
         for behavior in self.behaviors_meta["data"]:
-            obj = Behavior(behavior, self.primitives)
+            obj = Behavior(behavior, self.transformationPrimitives)
             self.behaviors.append(obj)
 
     def processPrimitives(self):
@@ -100,10 +100,15 @@ class Design():
         if "data" not in getattr(self, "primitives_meta"):
             raise Exception("Primitives metadata doesn't contain data key")
         
-        self.primitives = []
-        for primitive in self.primitives_meta["data"]:
-            obj = Primitive(primitive)
-            self.primitives.append(obj)
+        self.transformationPrimitives = []
+        self.attributePrimitives = []
+        for primitive in self.primitives_meta["data"]["transformations"]:
+            obj = Primitive(primitive, "transformation")
+            self.transformationPrimitives.append(obj)
+
+        for primitive in self.primitives_meta["data"]["attributes"]:
+            obj = Primitive(primitive, "attribute")
+            self.attributePrimitives.append(obj)
 
     def processWorldState(self):
         '''
