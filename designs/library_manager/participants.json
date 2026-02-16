@@ -3,6 +3,7 @@
     "data": [
         {
             "name": "Book",
+            "attributes": ["Name"],
             "can_belong_to": ["User", "Librarian", "Basket"]
         },
         {
