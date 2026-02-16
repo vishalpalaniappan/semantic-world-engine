@@ -9,5 +9,6 @@ are modified.
 class Participant:
 
     def __init__(self, participant):
+        self.name = participant["name"]
         print ("Created participant:", participant["name"])
         pass

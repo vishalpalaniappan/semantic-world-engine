@@ -7,15 +7,18 @@
         },
         {
             "name": "User",
-            "can_hold": ["Book"]
+            "has": [],
+            "can_have": ["Book"]
         },
         {
             "name": "Librarian",
-            "can_hold": ["Book"]
+            "has": [],
+            "can_have": ["Book"]
         },
         {
             "name": "Basket",
-            "can_hold": ["Book"]
+            "has": [],
+            "can_have": ["Book"]
         }
     ]
 }

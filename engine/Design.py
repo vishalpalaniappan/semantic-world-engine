@@ -59,6 +59,7 @@ class Design():
         self.processParticipants()
         self.processBehaviors()
         self.processPrimitives()
+        self.processWorldState()
 
     def processParticipants(self):
         '''
@@ -69,10 +70,9 @@ class Design():
         if "data" not in getattr(self, "participants_meta"):
             raise Exception("Participants metadata doesn't contain data key")
         
-        self.participants = []
+        self.participant_types = {}
         for participant in self.participants_meta["data"]:
-            obj = Participant(participant)
-            self.participants.append(obj)
+            self.participant_types[participant["name"]] = participant
 
     def processBehaviors(self):
         '''
@@ -102,3 +102,25 @@ class Design():
             obj = Primitive(primitive)
             self.primitives.append(obj)
 
+    def processWorldState(self):
+        '''
+        Create the world state from the metadata. It intializes
+        objects with the specified participants.
+        
+        :param self: Reference to instantiated object.
+        '''
+        if "data" not in getattr(self, "initial_world_state_meta"):
+            raise Exception("Initial world state doesn't contain data key")
+        
+        self.world = []
+        for entry in self.initial_world_state_meta["data"]:
+
+            if entry["participant"] not in self.participant_types:
+                raise Exception("World state contains ambiguous participant")
+            
+            participant = Participant(self.participant_types[entry["participant"]])
+            self.world.append(participant)
+
+        # Display the world state
+        for paritcipant in self.world:
+            print(paritcipant.name)
