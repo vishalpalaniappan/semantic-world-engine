@@ -10,9 +10,21 @@ class Behavior():
 
     def __init__(self, behavior_meta, primitives):
         self.primitives = primitives
+        self.primitive = self.getPrimitive(behavior_meta["primitive"])
         self.behavior = behavior_meta
         print("Created behavior:", behavior_meta["name"])
         pass
 
     def getName(self):
         return self.behavior["name"]
+
+    def getPrimitive(self, name):
+        '''
+        Returns the primitive given its name.
+        
+        :param self: Reference to self.
+        '''
+
+        for primitive in self.primitives:
+            if (name == primitive.getName()):
+                return primitive

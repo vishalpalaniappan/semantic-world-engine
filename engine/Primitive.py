@@ -19,5 +19,12 @@ from explicitly defined transformations.
 class Primitive():
 
     def __init__(self, primitive_meta):
+        self.meta = primitive_meta
         print("Created primitive:", primitive_meta["name"])
         pass
+
+    def getName(self):
+        if "name" in self.meta:
+            return self.meta["name"]
+        else:
+            return None

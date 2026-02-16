@@ -42,12 +42,11 @@ class StateMachine():
 
         behavior = self.getBehavior(currStep["behavior"])
         print(currStep)
-        print(behavior.getName())
+        print(behavior.getName(), behavior.primitive.getName())
 
         if ("goto" in currStep):
             self.currPosition = int(currStep["goto"])
             self.step()
-
 
     def getBehavior(self, behaviorName):
         '''
