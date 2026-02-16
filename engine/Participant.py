@@ -1,3 +1,4 @@
+import uuid
 '''
 This class specifies a participant in this
 semantic world. The participants are involved in
@@ -9,6 +10,7 @@ are modified.
 class Participant:
 
     def __init__(self, participant):
+        self.uuid = uuid.uuid4()
         self.name = participant["name"]
         print ("Created participant:", participant["name"])
         pass
