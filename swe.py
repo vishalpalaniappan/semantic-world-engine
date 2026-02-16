@@ -16,12 +16,13 @@ def main(argv):
     design = parsed_args.design
 
     try:
-        open(design)
+        with open(design) as f:
+            pass
     except Exception as e:
         print(f"Invalid arguments: {str(e)}", file=sys.stderr)
         return -1
 
-    print("Sucessfully loaded design file.")
+    print("Successfully loaded design file.")
 
 if "__main__" == __name__:
     sys.exit(main(sys.argv))
