@@ -50,6 +50,13 @@ class StateMachine():
 
 
     def getBehavior(self, behaviorName):
+        '''
+        Gets the specified behavior from the list given
+        the behavior name.
+        
+        :param self: Reference to self
+        :param behaviorName: Name of behavior in step.
+        '''
         for behavior in self.behaviors:
             if (behavior.getName() == behaviorName):
                 return behavior
