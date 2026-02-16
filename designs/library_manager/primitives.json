@@ -3,14 +3,16 @@
     "data": [
         {
             "name": "Add",
+            "required": ["from", "to"],
             "fromKey": "has",
             "toKey": "has",
             "description": "Transfers ownership of object form one participant to another."
         },
         {
             "name": "Create",
+            "required": ["to"],
             "toKey": "has",
-            "description": "Creates an object adds it to a participant."
+            "description": "Creates a participant and adds it to a participant."
         }
     ]
 }
