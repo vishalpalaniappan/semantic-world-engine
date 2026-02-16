@@ -7,6 +7,14 @@
             "from": "Librarian",
             "to": "Basket",
             "hasUid": true
+        },
+        {
+            "name": "AcceptBookFromUser",
+            "primitive": "Create",
+            "prompt": "Please enter books name:",
+            "from": "environment",
+            "to": "Librarian",
+            "hasUid": true
         }
     ]
 }
