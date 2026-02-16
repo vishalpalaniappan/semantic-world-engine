@@ -10,5 +10,9 @@ class Behavior():
 
     def __init__(self, behavior_meta, primitives):
         self.primitives = primitives
+        self.behavior = behavior_meta
         print("Created behavior:", behavior_meta["name"])
         pass
+
+    def getName(self):
+        return self.behavior["name"]

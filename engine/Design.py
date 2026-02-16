@@ -17,6 +17,7 @@ class Design():
     def __init__(self, designPath):
         self.designPath = designPath
         self.loadDesign()
+        self.stateMachine.run()
 
     def loadDesign(self):
         '''
@@ -134,5 +135,7 @@ class Design():
         :param self: Reference to instantiated object.
         '''
         self.stateMachine = StateMachine(
-            getattr(self, "state_machine_meta")
+            getattr(self, "state_machine_meta"),
+            self.behaviors,
+            self.world
         )
