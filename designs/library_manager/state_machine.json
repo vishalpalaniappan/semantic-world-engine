@@ -3,7 +3,9 @@
     "data": [
         {
             "id": "1",
-            "behavior": "AcceptBookFromUser"
+            "prompt": "Please submit book by entering its name:",
+            "behavior": "AcceptBookFromUser",
+            "goto": "2"
         },
         {
             "id": "2",
