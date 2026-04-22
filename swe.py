@@ -1,5 +1,6 @@
 import sys
 import argparse
+from engine.Design import Design
 
 def main(argv):
     args_parser = argparse.ArgumentParser(
@@ -7,22 +8,22 @@ def main(argv):
     )
 
     args_parser.add_argument(
-        "design",
+        "design_path",
         type=str,
         help="Path to design file"
     )
 
     parsed_args = args_parser.parse_args(argv[1:])
-    design = parsed_args.design
+    design_path = parsed_args.design_path
 
     try:
-        with open(design) as f:
+        with open(design_path) as f:
             pass
     except Exception as e:
         print(f"Invalid arguments: {str(e)}", file=sys.stderr)
         return -1
 
-    print("Successfully loaded design file.")
+    Design(design_path)
 
 if "__main__" == __name__:
     sys.exit(main(sys.argv))

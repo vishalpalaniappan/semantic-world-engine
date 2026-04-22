@@ -1,0 +1,20 @@
+{
+    "description": "Contains the behavor of the closed semantic world.",
+    "data": [
+        {
+            "name": "AddBookToBasket",
+            "steps": [
+                "Transfer Book Librarian Basket"
+            ]
+        },
+        {
+            "name": "AcceptBookFromUser",
+            "acceptsInput": true,
+            "steps": [
+                "Create Book",
+                "Assign Input Book Name",
+                "Add Book Librarian"
+            ]
+        }
+    ]
+}

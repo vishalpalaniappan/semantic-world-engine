@@ -1,0 +1,30 @@
+{
+    "description": "Contains the semantic primitives of the closed semantic world.",
+    "data": {
+        "transformations": [
+            {
+                "name": "Add",
+                "required": ["from", "to"],
+                "fromKey": "has",
+                "toKey": "has",
+                "description": "Transfers ownership of object form one participant to another."
+            },
+            {
+                "name": "Create",
+                "required": ["to"],
+                "toKey": "has",
+                "description": "Creates a participant and adds it to a participant."
+            },
+            {
+                "name": "Assign",
+                "description": "Assigns a value to an attribute."
+            }
+        ],
+        "attributes": [
+            {
+                "name": "Name",
+                "type": "String"
+            }
+        ]
+    }
+}

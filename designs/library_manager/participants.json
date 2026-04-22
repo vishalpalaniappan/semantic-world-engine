@@ -1,0 +1,26 @@
+{
+    "description": "Contains the participants of the closed semantic world.",
+    "data": [
+        {
+            "name": "Book",
+            "attributes": ["Name"],
+            "required": ["Name"],
+            "can_belong_to": ["User", "Librarian", "Basket"]
+        },
+        {
+            "name": "User",
+            "has": [],
+            "can_have": ["Book"]
+        },
+        {
+            "name": "Librarian",
+            "has": [],
+            "can_have": ["Book"]
+        },
+        {
+            "name": "Basket",
+            "has": [],
+            "can_have": ["Book"]
+        }
+    ]
+}
